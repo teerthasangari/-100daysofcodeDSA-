@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    char s[100];
+    scanf("%s", s);   // read string without spaces
+
+    int left = 0, right = 0;
+
+    // find length of string
+    while (s[right] != '\0') {
+        right++;
+    }
+    right--; // last character index
+
+    // two-pointer comparison
+    while (left < right) {
+        if (s[left] != s[right]) {
+            printf("NO");
+            return 0;
+        }
+        left++;
+        right--;
+    }
+
+    printf("YES");
+    return 0;
+}
